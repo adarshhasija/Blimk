@@ -1,0 +1,21 @@
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        
+        <item android:id="@+id/camera"
+          android:icon="@drawable/ic_action_camera"
+          android:title="Camera"
+          android:showAsAction="ifRoom" />
+        
+   <!--      <item
+        android:id="@+id/refresh"
+        android:showAsAction="never"
+        android:title="Refresh"/>   -->
+        
+        <item
+        android:id="@+id/contacts"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_person"
+        android:title="Contacts"/>
+        
+    </menu>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.blimk"
+    android:versionCode="6"
+    android:versionName="1.0.5" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="14" />
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/> 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	
+	<permission android:protectionLevel="signature"
+    	android:name="com.blimk.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.blimk.permission.C2D_MESSAGE" />
+	
+
+    <application
+        android:name="com.blimk.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/eye_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+  <!--      <service android:exported="true" android:name="com.blimk.SyncService" >
+		    <intent-filter>
+		        <action android:name="android.content.SyncAdapter"/>
+		    </intent-filter>
+		    <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/sync_adapter"/>
+		</service> -->
+        <service android:name="com.blimk.SyncService">
+		    <intent-filter>
+		        <action android:name="android.accounts.AccountAuthenticator" />
+		    </intent-filter>
+		    <meta-data android:name="android.accounts.AccountAuthenticator"
+		        android:resource="@xml/authenticator" />
+		</service>
+        <activity
+            android:name="com.blimk.MainActivity"
+    		android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.blimk.Login" 
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity android:name="com.blimk.Signup" 
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity android:name="com.blimk.CameraActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="orientation|screenSize"
+    		android:screenOrientation="portrait"  />
+        <activity android:name="com.blimk.InboxActivity"
+            		android:configChanges="orientation|screenSize"
+    				android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.blimk.InboxListActivity"
+            		android:configChanges="orientation|screenSize"
+    				android:screenOrientation="portrait" >
+            	<meta-data
+        			android:name="android.support.PARENT_ACTIVITY"
+        			android:value="com.blimk.CameraActivity"/>
+        </activity>
+        <activity android:name="com.blimk.CapturedImage"
+            android:label="Question? (optional)"
+            android:configChanges="orientation|screenSize"
+         android:windowSoftInputMode="stateAlwaysVisible"  />
+        <activity android:name="com.blimk.CapturedImageDefaultAnswer"
+            android:label="Choose default answer"
+            android:configChanges="orientation|screenSize"  />
+        <activity android:name="com.blimk.User" />
+        <activity android:name="com.blimk.ImageReply"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="orientation|screenSize"
+    		android:screenOrientation="portrait" />
+        <activity android:name="com.blimk.ImageResult"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="orientation|screenSize"
+    		android:screenOrientation="portrait" />
+        <activity android:name="com.blimk.Contacts"
+            		android:parentActivityName="com.blimk.InboxListActivity" />
+        <activity android:name="com.blimk.SelectRecipients" />
+        <activity android:name="com.blimk.ImageResultListActivity"
+            		android:configChanges="orientation|screenSize"
+    				android:screenOrientation="portrait" />
+        <activity android:name="com.blimk.TestDatabaseActivity" />
+        
+        
+        <service android:name="com.parse.PushService" />
+		<receiver android:name="com.parse.ParseBroadcastReceiver">
+		  <intent-filter>
+		    <action android:name="android.intent.action.BOOT_COMPLETED" />
+		    <action android:name="android.intent.action.USER_PRESENT" />
+		  </intent-filter>
+		</receiver>
+		<receiver android:name="com.blimk.PushNotificationHandler" android:exported="false">
+		  <intent-filter>
+		    <action android:name="com.blimk.NEW" />
+		  </intent-filter>
+		</receiver>
+		<receiver android:name="com.blimk.PushNotificationReplyHandler" android:exported="false">
+		  <intent-filter>
+		    <action android:name="com.blimk.REPLY" />
+		  </intent-filter>
+		</receiver>
+		<receiver android:name="com.parse.GcmBroadcastReceiver"
+		    android:permission="com.google.android.c2dm.permission.SEND">
+		  <intent-filter>
+		    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		 
+		    <!--
+		      IMPORTANT: Change "com.parse.starter" to match your app's package name.
+		    -->
+		    <category android:name="com.blimk" />
+		  </intent-filter>
+		</receiver>
+		
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    
+    <LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:clickable="true"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="20dp"
+	    >
+	    
+        <TextView
+	        android:id="@+id/explanation"
+	        android:layout_width="250dp"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        style="@android:style/TextAppearance.Small"
+	        android:text="Please enter your number and full name.\n This is requred to ensure that your contacts can find you on blimk. We do not share these details with anyone else" /> 
+	    
+        <Spinner
+    		android:id="@+id/countries_spinner"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content" />
+        
+		<EditText
+		    android:id="@+id/phone"
+		    android:layout_width="fill_parent"
+		    android:layout_height="50dp"
+		    android:hint="@string/phone_number"
+		    android:inputType="phone" />
+		
+		<EditText
+		    android:id="@+id/full_name"
+		    android:layout_width="fill_parent"
+		    android:layout_height="50dp"
+		    android:hint="@string/full_name"
+		    android:inputType="text" />
+		
+
+		<TextView
+	        android:id="@+id/signup_button"
+	        android:layout_width="250dp"
+	        android:layout_height="50dp"
+	        android:gravity="center"
+	        android:background="#FF0000FF"
+	        android:textColor="#FFFFFFFF"
+	        android:text="@string/submit" /> 
+	</LinearLayout>
+        
+    
+</RelativeLayout>

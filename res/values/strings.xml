@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Blimk</string>
+    <string name="app_name_dev">Blimk-dev</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="swipe_right">Swipe right</string>
+    <string name="swipe_down">Swipe down</string>
+    <string name="swipe_up">Swipe up</string>
+    <string name="swipe_left">Swipe left</string>
+    <string name="swipe_left_or_right">Swipe left or right</string>
+    <string name="tap_screen_to_click">Tap screen to click</string>
+    <string name="swipe_up_or_down">Swipe up or down</string>
+    <string name="your_question_here">Your question here</string>
+    <string name="action_clear_image">Clear Image</string>
+    <string name="action_save_image">Save Image</string>
+    <string name="action_about_image_questions">About</string>
+    <string name="username_hint">Username...</string>
+    <string name="password_hint">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up_here">New User? Sign up here</string>
+    <string name="about_blinkit">About blinkIt</string>
+    <string name="email_hint">Email address...(required)</string>
+    <string name="phone_hint">Phone number...</string>
+    <string name="password_confirm_hint">Confirm password...</string>
+    <string name="signup">Signup</string>
+    <string name="signout">Signout</string>
+    <string name="phone_number">Local number...</string>
+    <string name="display_name">Display name...</string>
+    <string name="register">Register</string>
+    <string name="submit">Submit</string>
+    <string name="tell_a_friend">Tell a friend</string>
+    <string name="refresh">Refresh</string>
+    <string name="select_all">Select all</string>
+    <string name="unselect_all">Unselect all</string>
+    <string name="full_name">Full name</string>
+    <string name="delete_media">Delete media</string>
+
+</resources>

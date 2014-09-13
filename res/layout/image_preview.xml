@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imagePreviewLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    
+  <ImageView
+    android:id="@+id/image_preview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    />
+  
+  <include
+    layout="@layout/image_caption_question"
+    />  
+
+</RelativeLayout>

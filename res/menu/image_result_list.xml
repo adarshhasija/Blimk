@@ -1,0 +1,17 @@
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        
+        <item android:id="@+id/progress"
+          android:showAsAction="ifRoom" />
+        
+        <item android:id="@+id/view_image"
+          android:icon="@drawable/ic_action_picture"
+          android:title="View Image"
+          android:showAsAction="ifRoom" />
+        
+        <item android:id="@+id/delete_media"
+          android:icon="@drawable/ic_action_discard"
+          android:title="Delete media"
+          android:showAsAction="ifRoom" />
+        
+    </menu>

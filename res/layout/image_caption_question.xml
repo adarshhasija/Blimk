@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_caption"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:layout_alignParentTop="true" >
+  
+  <ImageView
+        android:id="@+id/send_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitXY"  
+        android:src="@drawable/right_arrow" />
+  
+    
+  <EditText
+    android:id="@+id/question"
+    android:maxLength="20"
+    android:layout_width="fill_parent"
+    android:layout_height="64dp"
+    android:layout_toLeftOf="@id/send_button"
+    android:hint="@string/your_question_here"
+    android:inputType="text" />
+
+
+</RelativeLayout>
